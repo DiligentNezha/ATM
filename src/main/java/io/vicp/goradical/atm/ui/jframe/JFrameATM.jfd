@@ -1,0 +1,59 @@
+JFDML JFormDesigner: "6.0.0.0.51" Java: "1.8.0_77" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		auxiliary() {
+			"JavaCodeGenerator.defaultHandlerModifiers": 0
+		}
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:35:p, comp jpanelNavigation1:::p:167:p, space ::140:x, comp jifLogin:::p::p, space :p:139:p}}"
+			"$verticalGroup": "par l {seq {par l {seq {space :p:55:p, comp jpanelNavigation1:::p::p}, seq l {space :p:86:p, comp jifLogin:::p::p}}, space ::159:x}}"
+		} ) {
+			name: "this"
+			"background": new java.awt.Color( 153, 255, 204, 255 )
+			"$locationPolicy": 1
+			"$sizePolicy": 1
+			add( new FormContainer( "javax.swing.JInternalFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:404:x};par l {seq {space :0:81:x, par l {seq {comp label1:::p:57:p, space :18:18:p, comp jtfIdentityCard:::p:166:p}, seq {comp label2:::p:57:p, space :18:18:p, comp jpfPassword:::p:166:p}, seq {space :28:28:p, comp jbtLogin:::p:81:p, space :34:34:p, comp jbtCancel:::p:80:p}}, space :0:82:x}}"
+				"$verticalGroup": "par l {space :0:267:x};par l {seq {space :0:58:x, par l {comp label1:::p:34:p, comp jtfIdentityCard:::p::p}, space :12:12:p, par l {comp label2:::p:35:p, seq {space :2:2:p, comp jpfPassword:::p::p}}, space :29:29:p, par l {comp jbtLogin:::p::p, comp jbtCancel:::p::p}, space :0:59:x}}"
+			} ) {
+				name: "jifLogin"
+				"visible": true
+				"background": new java.awt.Color( 214, 236, 196, 255 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "身份证:"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "密码:"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "jtfIdentityCard"
+				} )
+				add( new FormComponent( "javax.swing.JPasswordField" ) {
+					name: "jpfPassword"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "jbtLogin"
+					"text": "登录"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button1MouseClicked", true ) )
+					addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "jbtLoginKeyPressed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "jbtCancel"
+					"text": "取消"
+				} )
+			} )
+			add( new FormComponent( "com.goradical.atm.ui.jpanel.JpanelNavigation" ) {
+				name: "jpanelNavigation1"
+				"background": new java.awt.Color( 0, 204, 204, 255 )
+				"border": new javax.swing.border.LineBorder( sfield java.awt.Color cyan, 4, false )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 67, 14 )
+			"size": new java.awt.Dimension( 710, 509 )
+		} )
+	}
+}

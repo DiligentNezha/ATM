@@ -1,0 +1,32 @@
+JFDML JFormDesigner: "6.0.0.0.51" Java: "1.8.0_77" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {space :0:264:x};par l {seq {space :0:0:x, par l {comp jbtQuery:::p:112:p, comp jbtSaveMoney:::p:112:p, comp jbtDrawMoney:::p:112:p, comp jbtExit:::p:112:p}, space :0:0:x}}"
+			"$verticalGroup": "par l {space :0:375:x};par l {seq {space :0:0:x, comp jbtQuery:::p::p, space :46:46:p, comp jbtSaveMoney:::p::p, space :48:48:p, comp jbtDrawMoney:::p::p, space :55:55:p, comp jbtExit:::p::p, space :0:0:x}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jbtQuery"
+				"text": "查询"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jbtSaveMoney"
+				"text": "存钱"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jbtDrawMoney"
+				"text": "取钱"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jbtExit"
+				"text": "退出"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 211, 300 )
+		} )
+	}
+}
