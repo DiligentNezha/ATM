@@ -2,7 +2,7 @@ package io.vicp.goradical.atm.controler;
 
 import io.vicp.goradical.atm.dao.DaoManager;
 import io.vicp.goradical.atm.dao.UserDao;
-import io.vicp.goradical.atm.model.User;
+import io.vicp.goradical.atm.entity.User;
 import io.vicp.goradical.atm.service.UserService;
 
 import javax.servlet.ServletException;

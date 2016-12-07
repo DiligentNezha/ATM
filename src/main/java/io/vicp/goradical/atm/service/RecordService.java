@@ -1,7 +1,7 @@
 package io.vicp.goradical.atm.service;
 
 import io.vicp.goradical.atm.dao.RecordDao;
-import io.vicp.goradical.atm.model.Record;
+import io.vicp.goradical.atm.entity.Record;
 import io.vicp.goradical.atm.tools.JDBCTools;
 
 import java.sql.Connection;

@@ -1,0 +1,27 @@
+JFDML JFormDesigner: "6.0.0.0.51" Java: "1.8.0_77" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq t {space :::x, comp jpanelNavigation:::p:208:p, space :::p, comp jpanelUserInfo:::p:486:p, space :::p, comp jpanelDrawMoney:::p:424:p, space :p:81:p}}"
+			"$verticalGroup": "par l {seq {par l {seq {space :p:24:p, par l {comp jpanelNavigation:::p::p, comp jpanelDrawMoney:::p:384:p}}, seq l {space :::p, comp jpanelUserInfo:::p:415:p}}, space ::65:x}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "io.vicp.goradical.atm.ui.jpanel.JpanelNavigation" ) {
+				name: "jpanelNavigation"
+				"background": new java.awt.Color( 0, 204, 204, 255 )
+			} )
+			add( new FormComponent( "io.vicp.goradical.atm.ui.jpanel.JpanelDrawMoney" ) {
+				name: "jpanelDrawMoney"
+				"background": new java.awt.Color( 0, 102, 255, 255 )
+			} )
+			add( new FormComponent( "io.vicp.goradical.atm.ui.jpanel.JpanelUserInfo" ) {
+				name: "jpanelUserInfo"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 590, 389 )
+		} )
+	}
+}

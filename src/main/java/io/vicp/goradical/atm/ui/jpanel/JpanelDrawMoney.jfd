@@ -1,0 +1,40 @@
+JFDML JFormDesigner: "6.0.0.0.51" Java: "1.8.0_77" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:54:p, par l:::p {comp jbt200yuan::::120:x, comp jbt100yuan::l::120:x, comp jbt500yuan::l::120:x}, space ::79:x, par l {comp jbt1000yuan:::p:120:p, comp jbt2000yuan:::p:120:p, comp button5:::p:120:p}, space :p:89:p}}"
+			"$verticalGroup": "par l {seq l {space :p:57:p, par l {seq {comp jbt1000yuan:::p::p, space :p:45:p, comp jbt2000yuan:::p::p, space :p:64:p, comp button5:::p::p}, seq {comp jbt100yuan:::p::p, space :p:45:p, comp jbt200yuan:::p::p, space :p:64:p, comp jbt500yuan:::p::p}}, space ::89:x}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jbt100yuan"
+				"text": "100"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jbt200yuan"
+				"text": "200"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jbt500yuan"
+				"text": "500"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jbt1000yuan"
+				"text": "1000"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jbt2000yuan"
+				"text": "2000"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button5"
+				"text": "输入金额"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 82, 48 )
+			"size": new java.awt.Dimension( 370, 300 )
+		} )
+	}
+}

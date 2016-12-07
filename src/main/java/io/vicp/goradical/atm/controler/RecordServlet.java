@@ -3,7 +3,7 @@ package io.vicp.goradical.atm.controler;
 import io.vicp.goradical.atm.dao.ActionTypeDao;
 import io.vicp.goradical.atm.dao.DaoManager;
 import io.vicp.goradical.atm.dao.RecordDao;
-import io.vicp.goradical.atm.model.Record;
+import io.vicp.goradical.atm.entity.Record;
 import io.vicp.goradical.atm.service.RecordService;
 
 import javax.servlet.ServletException;

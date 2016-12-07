@@ -6,12 +6,15 @@ package io.vicp.goradical.atm.ui.jframe;
 
 import io.vicp.goradical.atm.dao.DaoManager;
 import io.vicp.goradical.atm.dao.UserDao;
-import io.vicp.goradical.atm.model.User;
+import io.vicp.goradical.atm.entity.Account;
+import io.vicp.goradical.atm.entity.ApplicationData;
+import io.vicp.goradical.atm.entity.User;
 import io.vicp.goradical.atm.service.UserService;
-import io.vicp.goradical.atm.ui.jpanel.JpanelNavigation;
+import io.vicp.goradical.atm.tools.TableTool;
+import io.vicp.goradical.atm.ui.jpanel.JpanelATM;
+import io.vicp.goradical.atm.ui.jpanel.JpanelUserInfo;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -38,11 +41,18 @@ public class JFrameATM extends JFrame {
 	}
 
 	private void login(){
-		User user = userService.login(jtfIdentityCard.getText(), jpfPassword.getText());
+		User user = userService.login(jtfIdentityCard.getText(), new String(jpfPassword.getPassword()));
 		if (user != null) {
 			JOptionPane.showMessageDialog(this, "登陆成功!");
+			ApplicationData.setCurrentUser(user);
+			JpanelUserInfo jpanelUserInfo = jpanelATM.getJpanelUserInfo();
+			jpanelUserInfo.getJlbUseName().setText(user.getUserName());
+			String[] columnsName = {"bankCard", "bank", "balance"};
+			jpanelUserInfo.fillColumnsName(columnsName);
+			jpanelUserInfo.fillTable(TableTool.getTableData(user.getAccountList(), Account.class, columnsName));
+			jpanelUserInfo.addViewRecord();
 			jifLogin.setVisible(false);
-			jpanelNavigation1.setVisible(true);
+			jpanelATM.setVisible(true);
 		} else {
 			JOptionPane.showMessageDialog(this, "请输入正确的账号和密码!");
 		}
@@ -57,7 +67,7 @@ public class JFrameATM extends JFrame {
 		jpfPassword = new JPasswordField();
 		jbtLogin = new JButton();
 		jbtCancel = new JButton();
-		jpanelNavigation1 = new JpanelNavigation();
+		jpanelATM = new JpanelATM();
 
 		//======== this ========
 		setBackground(new Color(153, 255, 204));
@@ -152,38 +162,37 @@ public class JFrameATM extends JFrame {
 			);
 		}
 
-		//---- jpanelNavigation1 ----
-		jpanelNavigation1.setBackground(new Color(0, 204, 204));
-		jpanelNavigation1.setBorder(new LineBorder(Color.cyan, 4));
-		jpanelNavigation1.setName("jpanelNavigation1"); //NON-NLS
+		//---- jpanelATM ----
+		jpanelATM.setName("jpanelATM"); //NON-NLS
 
 		GroupLayout contentPaneLayout = new GroupLayout(contentPane);
 		contentPane.setLayout(contentPaneLayout);
 		contentPaneLayout.setHorizontalGroup(
 			contentPaneLayout.createParallelGroup()
 				.addGroup(contentPaneLayout.createSequentialGroup()
-					.addGap(35, 35, 35)
-					.addComponent(jpanelNavigation1, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
-					.addComponent(jifLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(139, 139, 139))
+					.addGroup(contentPaneLayout.createParallelGroup()
+						.addGroup(contentPaneLayout.createSequentialGroup()
+							.addGap(171, 171, 171)
+							.addComponent(jifLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addGroup(contentPaneLayout.createSequentialGroup()
+							.addGap(31, 31, 31)
+							.addComponent(jpanelATM, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(172, Short.MAX_VALUE))
 		);
 		contentPaneLayout.setVerticalGroup(
 			contentPaneLayout.createParallelGroup()
 				.addGroup(contentPaneLayout.createSequentialGroup()
-					.addGroup(contentPaneLayout.createParallelGroup()
-						.addGroup(contentPaneLayout.createSequentialGroup()
-							.addGap(55, 55, 55)
-							.addComponent(jpanelNavigation1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(contentPaneLayout.createSequentialGroup()
-							.addGap(86, 86, 86)
-							.addComponent(jifLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(159, Short.MAX_VALUE))
+					.addGap(24, 24, 24)
+					.addComponent(jpanelATM, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(42, 42, 42)
+					.addComponent(jifLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
-		setSize(710, 509);
-		setLocationRelativeTo(null);
+		setSize(754, 500);
+		setLocationRelativeTo(getOwner());
 		// JFormDesigner - End of component initialization  //GEN-END:initComponents
-		jpanelNavigation1.setVisible(false);
+		jpanelATM.setVisible(false);
+//		jpanelATM.setVisible(true);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -196,6 +205,6 @@ public class JFrameATM extends JFrame {
 	private JPasswordField jpfPassword;
 	private JButton jbtLogin;
 	private JButton jbtCancel;
-	private JpanelNavigation jpanelNavigation1;
+	private JpanelATM jpanelATM;
 	// JFormDesigner - End of variables declaration  //GEN-END:variables
 }

@@ -1,6 +1,6 @@
 package io.vicp.goradical.atm.dao;
 
-import io.vicp.goradical.atm.model.Account;
+import io.vicp.goradical.atm.entity.Account;
 import io.vicp.goradical.atm.tools.JDBCTools;
 import org.junit.Test;
 

@@ -1,0 +1,30 @@
+JFDML JFormDesigner: "6.0.0.0.51" Java: "1.8.0_77" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :::p, comp scrollPane1::::488:x, space :::p}, seq l {space :p:134:p, comp jbtPrev:::p::p, space :p:51:p, comp jbtNext:::p::p, space ::165:x}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp scrollPane1:::p:300:p, space s:::p, par b {comp jbtPrev::b:p::p, comp jbtNext::b:p::p}, space ::11:x}}"
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "jtbRecord"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jbtPrev"
+				"text": "上一页"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jbtNext"
+				"text": "下一页"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

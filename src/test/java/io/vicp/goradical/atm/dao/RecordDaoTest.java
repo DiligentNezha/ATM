@@ -1,6 +1,6 @@
 package io.vicp.goradical.atm.dao;
 
-import io.vicp.goradical.atm.model.Record;
+import io.vicp.goradical.atm.entity.Record;
 import io.vicp.goradical.atm.tools.JDBCTools;
 import org.junit.After;
 import org.junit.Before;

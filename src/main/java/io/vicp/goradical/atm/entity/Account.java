@@ -1,4 +1,4 @@
-package io.vicp.goradical.atm.model;
+package io.vicp.goradical.atm.entity;
 
 public class Account {
 	private int accountId;

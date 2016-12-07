@@ -1,0 +1,27 @@
+JFDML JFormDesigner: "6.0.0.0.51" Java: "1.8.0_77" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:49:p, comp jlbAccount:::p:66:p, space s:::p, comp comboBox1:::p:209:p, space :p:33:p, comp jbtSaveMoney:::p:87:p, space ::38:x}}"
+			"$verticalGroup": "par l {seq l {par l {seq {space :p:126:p, par l {comp jlbAccount:::p::p, comp comboBox1:::p::p}}, seq l {space :p:118:p, comp jbtSaveMoney:::p::p}}, space ::217:x}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "jlbAccount"
+				"text": "银行卡"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "comboBox1"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jbtSaveMoney"
+				"text": "存钱"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 29, 43 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}
