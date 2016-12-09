@@ -22,6 +22,7 @@ public class JpanelATM extends JPanel {
 		jpanelUserInfo = new JpanelUserInfo();
 
 		//======== this ========
+		setBackground(new Color(204, 255, 204));
 		setName("this"); //NON-NLS
 
 		//---- jpanelNavigation ----
@@ -33,6 +34,7 @@ public class JpanelATM extends JPanel {
 		jpanelDrawMoney.setName("jpanelDrawMoney"); //NON-NLS
 
 		//---- jpanelUserInfo ----
+		jpanelUserInfo.setBackground(new Color(153, 153, 255));
 		jpanelUserInfo.setName("jpanelUserInfo"); //NON-NLS
 
 		GroupLayout layout = new GroupLayout(this);

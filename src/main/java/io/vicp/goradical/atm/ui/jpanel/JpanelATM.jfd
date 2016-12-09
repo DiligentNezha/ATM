@@ -8,6 +8,7 @@ new FormModel {
 			"$verticalGroup": "par l {seq {par l {seq {space :p:24:p, par l {comp jpanelNavigation:::p::p, comp jpanelDrawMoney:::p:384:p}}, seq l {space :::p, comp jpanelUserInfo:::p:415:p}}, space ::65:x}}"
 		} ) {
 			name: "this"
+			"background": new java.awt.Color( 204, 255, 204, 255 )
 			add( new FormComponent( "io.vicp.goradical.atm.ui.jpanel.JpanelNavigation" ) {
 				name: "jpanelNavigation"
 				"background": new java.awt.Color( 0, 204, 204, 255 )
@@ -18,6 +19,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "io.vicp.goradical.atm.ui.jpanel.JpanelUserInfo" ) {
 				name: "jpanelUserInfo"
+				"background": new java.awt.Color( 153, 153, 255, 255 )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
