@@ -37,7 +37,6 @@ public class JpanelUserInfo extends JPanel {
 
 			//---- jtbAccount ----
 			jtbAccount.setName("jtbAccount"); //NON-NLS
-			jtbAccount.setModel(tableModel);
 			scrollPane1.setViewportView(jtbAccount);
 		}
 
